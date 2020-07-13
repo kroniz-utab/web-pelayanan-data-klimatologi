@@ -5,8 +5,10 @@
 <div class="container">
     <div class="row">
         <div class="col">
+
             <div class="card mt-3 mb-5">
                 <div class="card-body">
+                    <h2 class="text-center text-uppercase font-weight-bold mb-4">Input data fklim71</h2>
                     <form action="/input/save" method="POST">
                         <?= csrf_field(); ?>
                         <div class="form-group row">
@@ -47,6 +49,11 @@
                                 </select>
                             </div>
                         </div>
+                        <?php if (session()->getFlashdata('success')) : ?>
+                            <div class="alert alert-success" role="alert">
+                                <?= session()->getFlashdata('success'); ?>
+                            </div>
+                        <?php endif; ?>
                         <div style="overflow-x:auto;">
                             <table class="table mt-1">
                                 <tbody>

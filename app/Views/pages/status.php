@@ -7,12 +7,13 @@
         <div class="col">
             <div class="card mt-3 mb-3">
                 <div class="card-body">
+                    <h2 class="text-center text-uppercase font-weight-bold mb-4">Monitoring Data FKLIM71</h2>
                     <form action="monitor/status" method="GET">
-                        <!--?= csrf_field(); ?-->
+                        <?= csrf_field(); ?>
                         <div class="form-group row">
                             <label for="tgl" class="col-sm-2 col-form-label">Stasiun</label>
                             <div class="col-sm-5">
-                                <select class="form-control form-control-sm" id="bln" name="stasiun_id">
+                                <select class="form-control form-control-sm <?= ($validation->hasError('stasiun_id')) ? 'is-invalid' : ''; ?>" id="bln" name="stasiun_id">
                                     <option selected>Stasiun</option>
                                     <?php foreach ($station as $s) : ?>
                                         <option value="<?= $s['id']; ?>"><?= $s['user_id']; ?> - <?= $s['username']; ?></option>
@@ -23,7 +24,7 @@
                         <div class="form-group row">
                             <label for="tgl" class="col-sm-2 col-form-label">Bulan</label>
                             <div class="col-sm-2">
-                                <select class="form-control form-control-sm" id="bln" name="bulan">
+                                <select class="form-control form-control-sm <?= ($validation->hasError('bulan')) ? 'is-invalid' : ''; ?>" id="bln" name="bulan">
                                     <option selected>Bulan</option>
                                     <?php foreach ($bulan as $b) : ?>
                                         <option value="<?= $b['id']; ?>"><?= $b['bulan']; ?></option>
@@ -31,7 +32,7 @@
                                 </select>
                             </div>
                             <div class="col-sm-2">
-                                <select class="form-control form-control-sm" id="thn" name="tahun">
+                                <select class="form-control form-control-sm <?= ($validation->hasError('tahun')) ? 'is-invalid' : ''; ?>" id="thn" name="tahun">
                                     <option selected>Tahun</option>
                                     <?php for ($i = 2015; $i < 2051; $i++) : ?>
                                         <option value="<?= $i; ?>"><?= $i; ?></option>

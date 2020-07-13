@@ -44,12 +44,13 @@ $routes->post('/input/save', 'DataController::create');
 // $routes->get('/monitor', 'DataController::monitoring');
 $routes->get('/monitor', 'MonitorController::status');
 $routes->get('/monitor/status', 'MonitorController::stat');
+$routes->get('/monitor/(:segment)', 'MonitorController::details/$1');
 
 // ABOUT HANDLER
 $routes->get('/about', 'DataController::about');
 
 // COBA HANDLER
-$routes->get('/coba', 'DataController::pengen');
+// $routes->get('/coba', 'DataController::pengen');
 
 /**
  * --------------------------------------------------------------------

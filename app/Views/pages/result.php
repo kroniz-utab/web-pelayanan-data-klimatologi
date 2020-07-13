@@ -7,7 +7,8 @@
         <div class="col">
             <div class="card mt-4">
                 <div class="card-body">
-                    <table class="table">
+                    <h2 class="text-center text-uppercase font-weight-bold">Monitoring data fklim71</h2>
+                    <table class="table mt-4">
                         <tbody>
                             <tr>
                                 <th class="col-1">Tanggal</th>
@@ -16,15 +17,28 @@
                                 <th class="col-1">Status</th>
                                 <th class="col-1">Details</th>
                             </tr>
-                            <?php for ($i = 1; $i < 32; $i++) : ?>
-                                <tr>
-                                    <td><?= $i; ?></td>
-                                    <td>Bulan Tahun</td>
-                                    <td>UPT</td>
-                                    <td>Status</td>
-                                    <td>Det btn</td>
+                            <?php $i = 1; ?>
+                            <?php foreach ($data as $d) : ?>
+                                <tr class="<?php if ($d['id'] == 'NULL') {
+                                                echo ('table-danger table-sm');
+                                            } else {
+                                                echo ('table-success table-sm');
+                                            } ?>">
+                                    <td><?= $i++; ?></td>
+                                    <td><?= $d['bulan']; ?> <?= $d['tahun']; ?></td>
+                                    <td><?= $d['upt']; ?></td>
+                                    <td><?php if ($d['id'] == 'NULL') {
+                                            echo ('&#10006');
+                                        } else {
+                                            echo ('&#10004');
+                                        } ?></td>
+                                    <td><a <?php if ($d['id'] == 'NULL') {
+                                                echo ('href="#" class="btn btn-secondary btn-sm disabled" aria-disabled="true"');
+                                            } else {
+                                                echo ('href="' . $d['id'] . '" class="btn btn-primary btn-sm"');
+                                            } ?>>Details</a></td>
                                 </tr>
-                            <?php endfor; ?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

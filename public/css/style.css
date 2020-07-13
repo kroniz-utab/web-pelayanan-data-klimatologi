@@ -28,3 +28,8 @@ th,
 .table > tbody > tr > td {
   background: #80b9181e;
 }
+
+.profil {
+  width: 100%;
+  height: 100%;
+}
