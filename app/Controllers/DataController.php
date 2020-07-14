@@ -16,7 +16,7 @@ class DataController extends BaseController
     public function coba()
     {
         $data = [
-            'title' => 'HOME | Pusat Pelayana FKLIM',
+            'title' => 'HOME | Pusat Pelayanan Iklim',
             'cat' => 1,
         ];
         return view('pages/home', $data);
@@ -33,7 +33,7 @@ class DataController extends BaseController
         $get = $query->getResultArray();
 
         $data = [
-            'title' => 'Input Data | Pusat Pelayana FKLIM',
+            'title' => 'Input Data | Pusat Pelayanan Iklim',
             'bulan' => $result,
             'station' => $get,
             'validation' => \Config\Services::validation(),
@@ -45,7 +45,7 @@ class DataController extends BaseController
     public function about()
     {
         $data = [
-            'title' => 'About Us | Pusat Pelayana FKLIM',
+            'title' => 'About Us | Pusat Pelayanan Iklim',
             'cat' => 4
         ];
         return view('pages/about', $data);

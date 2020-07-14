@@ -14,7 +14,7 @@ class MonitorController extends BaseController
     //     $bulan = new BulanModel;
     //     $result = $bulan->findAll();
     //     $data = [
-    //         'title' => 'Monitoring FKLIM | Pusat Pelayana FKLIM',
+    //         'title' => 'Monitoring FKLIM | Pusat Pelayanan Iklim',
     //         'bulan' => $result,
     //     ];
     //     return view('pages/monitoring', $data);
@@ -32,7 +32,7 @@ class MonitorController extends BaseController
 
 
         $data = [
-            'title' => 'Monitoring FKLIM | Pusat Pelayana FKLIM',
+            'title' => 'Monitoring FKLIM | Pusat Pelayanan Iklim',
             'bulan' => $result,
             'station' => $get,
             'validation' => \Config\Services::validation(),
@@ -102,7 +102,7 @@ class MonitorController extends BaseController
         $bln = $bulan->findAll();
 
         $data = [
-            'title' => 'Monitoring FKLIM | Pusat Pelayana FKLIM',
+            'title' => 'Monitoring FKLIM | Pusat Pelayanan Iklim',
             'data' => $data,
             'bulan' => $bln,
             'tahun' => $thn,
@@ -152,7 +152,7 @@ class MonitorController extends BaseController
         // dd($eva);
 
         $data = [
-            'title' => 'Monitoring FKLIM | Pusat Pelayana FKLIM',
+            'title' => 'Monitoring FKLIM | Pusat Pelayanan Iklim',
             'data' => $iklim,
             'bulan' => $bulan,
             'upt' => $upt,
